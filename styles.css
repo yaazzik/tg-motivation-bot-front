@@ -61,21 +61,11 @@ body {
     opacity: 0.5;
 }
 
-.image {
-    display: block;
-    width: 80%;
-    border-radius: 10px ;
-}
-
-.image_holder{
-    margin: auto auto 10vh;
-}
-
 .advice {
     font-size: 24px;
     font-weight: bold;
     line-height: 1.1;
-    margin: 15vh auto 10px;
+    margin: 5vh auto 10px;
 }
 
 .footer {

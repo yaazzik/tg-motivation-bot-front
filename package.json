@@ -1,0 +1,23 @@
+{
+  "name": "tg-bot-front",
+  "version": "1.0.0",
+  "description": "frontend app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaazzik/tg-motivation-bot-front.git"
+  },
+  "keywords": [
+    "telegram",
+    "frontend"
+  ],
+  "author": "Mark Glebov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaazzik/tg-motivation-bot-front/issues"
+  },
+  "homepage": "https://github.com/yaazzik/tg-motivation-bot-front#readme"
+}

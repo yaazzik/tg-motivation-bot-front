@@ -1,1 +1,1 @@
-# tg-motivation-bot-front
+Igor kozyrkov inc.

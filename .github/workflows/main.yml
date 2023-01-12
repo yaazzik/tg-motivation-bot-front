@@ -27,16 +27,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-#      - name: install modules
-#        run: npm install
 
       - name: Run a one-line script
         run: echo Hello, world!
 
-#      - name: Looking for something on main page
-#        run: npm start test:app
-
-      # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,

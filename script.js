@@ -115,5 +115,6 @@ button.addEventListener('click', function () {
 });
 
 for (let i = 0; i < 3; i++){
-  smoothly(phrase, 'textContent', phrases[i]);
+  let randomElement = getRandomElement(phrases)
+  smoothly(phrase, 'textContent', randomElement);
 }

@@ -5,7 +5,7 @@
   "description": "frontend app",
   "main": "script.js",
   "scripts": {
-    "scriptTests": "npx playwright test"
+    "scriptTests": "node ./script.test.js"
   },
   "repository": "git+https://github.com/yaazzik/tg-motivation-bot-front.git",
   "keywords": [
@@ -18,8 +18,8 @@
     "url": "https://github.com/yaazzik/tg-motivation-bot-front/issues"
   },
   "homepage": "https://github.com/yaazzik/tg-motivation-bot-front#readme",
-  "devDependencies": {
-    "@playwright/test": "^1.29.2",
-    "yarn": "^1.22.19"
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }

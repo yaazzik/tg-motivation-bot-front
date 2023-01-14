@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/yaazzik/tg-motivation-bot-front#readme",
   "devDependencies": {
-    "@playwright/test": "^1.29.2"
+    "@playwright/test": "^1.29.2",
+    "yarn": "^1.22.19"
   }
 }

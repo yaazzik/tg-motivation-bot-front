@@ -7,10 +7,7 @@
   "scripts": {
     "scriptTests": "node ./script.test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yaazzik/tg-motivation-bot-front.git"
-  },
+  "repository": "git+https://github.com/yaazzik/tg-motivation-bot-front.git",
   "keywords": [
     "telegram",
     "frontend"

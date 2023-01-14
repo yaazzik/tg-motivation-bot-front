@@ -1,9 +1,5 @@
 import { phrases } from './phrases.js'
-
-function getRandomElement(arr) {
-  let randIndex = Math.floor(Math.random() * arr.length);
-  return arr[randIndex];
-}
+import { getRandomElement } from './utilities.js';
 
 let button = document.querySelector('.button');
 let phrase = document.querySelector('.phrase');

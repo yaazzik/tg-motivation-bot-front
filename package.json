@@ -5,7 +5,7 @@
   "description": "frontend app",
   "main": "script.js",
   "scripts": {
-    "scriptTests": "run script.test.js"
+    "scriptTests": "node ./script.test.js"
   },
   "repository": {
     "type": "git",

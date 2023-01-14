@@ -33,6 +33,9 @@ jobs:
       - name: Install modules
         run: npm install
 
+      - name: build
+        run: npm ci
+
       - name: test
         run: ./mocha.sh
 

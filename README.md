@@ -56,6 +56,12 @@ jobs:
 
 ![image-20230114234154406](https://sun9-east.userapi.com/sun9-27/s/v1/ig2/iu8UvSLkrBh73p3B9bM3Ywq5X2B24sZZPHaEowuoulPNw0WNjT7KwP_hbPTqZH5vRezRgUnoe5GjoUOeLsJBNNUI.jpg?size=937x695&quality=96&type=album)
 
+##### Pull requests
+
+  Для добавления тестов была создана ветка CI, в который велась разработка тестов. В данной дирректории создатеся слепок ветки, далее проходит CI init проверка при push на ветку master. Затем предоставляется актуальная информация о работе кода, в случае если все хорошо происходит merge, при котором нововедения встраиваются в основной код. Для тестирования функциолнальной части приложения использовалась библеотеки mocha и chai.
+
+  Mocha – основной фреймворк. Он предоставляет общие функции тестирования, такие как describe и it, а также функцию запуска тестов.
+  Chai – библиотека, предоставляющая множество функций проверки утверждений. 
 
 
 ##### script.test.js
@@ -86,6 +92,115 @@ describe('Тесты переменных', () => {
 ```
 
 ### CD
+
+Данный этап был реализован с помощью таких сервисов как Checklly и Versel.
+
+Тестирование CD выполенены на @playwright/test на сервисе Checkly. 
+  Github отправляет ифнормацию, на хостинг Versel, далее Versel обращается к Checkly, где записаны наши тесты, которые проверяют фронтенд составляющею: Отрисовку страницы и работоспособность кнопок. Затем Checkly датет ответ если тысты пройдены, и далее мы получаем финальный результат.
+  
+#####Versel
+
+![image](https://user-images.githubusercontent.com/60611845/212499177-a42bcfb9-0f5b-499a-8b5e-db32c9fba27f.png)
+
+![image](https://user-images.githubusercontent.com/60611845/212499172-abd3429c-ce68-4e7d-a78c-3deb92ec9c06.png)
+
+
+#####Checkly
+
+![image](https://user-images.githubusercontent.com/60611845/212498990-d66cdee2-18c2-4e42-abda-21e7e3d7649a.png)
+
+![image](https://user-images.githubusercontent.com/60611845/212498975-f0051d18-4c03-4c65-b673-5dc2e5167d6c.png)
+
+##### @playwright/test
+
+```
+const { devices, test, expect } = require('@playwright/test')
+test.describe('Page tests', () => {
+  test.beforeEach(async ({page}) => {
+    await page.goto(process.env.ENVIRONMENT_URL || 'https://tg-motivation-bot-front.vercel.app/')
+  })
+
+  function delay(ms) {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, ms);
+    });
+  }
+
+  test('should all page`s elements be rendered', async ({ page }) => {
+    const logo = page.locator('p.logo')
+    const button = page.locator('div.button')
+    const phrase = page.locator('span.phrase')
+    await expect(phrase).toBeVisible()
+    await expect(logo).toBeVisible()
+    await expect(button).toBeVisible()
+
+    await page.screenshot({ path: 'elementsRenderedScreenshot.jpg' })
+  })
+
+  test.describe('Tests of phrase-block', async () => {
+    test('should phrase-block render 4 phrases', async ({page}) => {
+
+      const phrase = page.locator('span.phrase')
+      async function loadPhraseText(ms = 8000) {
+        return await delay(ms).then(async () => await phrase.allInnerTexts())
+      }
+      const phraseText = (await phrase.allInnerTexts())[0]
+      const newPhraseText = (await loadPhraseText(10000))[0]
+
+      expect(newPhraseText).not.toBe(phraseText)
+
+      await page.screenshot({ path: 'lastPhraseScreenshot.jpg' })
+    })
+
+    test('should render another quote after click on the button', async ({page}) => {
+
+      const phrase = page.locator('span.phrase')
+      const button = page.locator('div.button')
+      async function loadPhraseText(ms = 8000) {
+        return await delay(ms).then(async () => await phrase.allInnerTexts())
+      }
+      const phraseText = (await loadPhraseText(10000))[0]
+      await button.click()
+
+      expect((await loadPhraseText(2000))[0]).not.toBe(phraseText)
+
+      await page.screenshot({ path: 'phraseAfterClickScreenshot.jpg' })
+    })
+  })
+})
+test.describe('Device site tests', () => {
+  test('should mobile device be emulated', async ({ browser }) => {
+    const iPhone = devices['iPhone SE']
+    const page = await browser.newPage({
+      ...iPhone,
+    })
+
+    await page.goto(process.env.ENVIRONMENT_URL || 'https://tg-motivation-bot-front.vercel.app/')
+
+    await page.screenshot({ path: './emulationScreenshot.png' })
+  })
+
+  test('throttle the browser network', async ({ page }) => {
+    const client = await page.context().newCDPSession(page)
+    await client.send('Network.enable')
+    await client.send('Network.emulateNetworkConditions', {
+      offline: false,
+      downloadThroughput: (4 * 1024 * 1024) / 8,
+      uploadThroughput: (3 * 1024 * 1024) / 8,
+      latency: 2000,
+    })
+
+    await page.goto(process.env.ENVIRONMENT_URL || 'https://tg-motivation-bot-front.vercel.app/')
+    await page.screenshot({ path: 'afterThrottleScreenshot.jpg' })
+  })
+})
+
+```
+
+
+
+
+
 
 
 

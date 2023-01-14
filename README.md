@@ -91,25 +91,36 @@ describe('Тесты переменных', () => {
 
 ```
 
+
+
 ### CD
 
 Данный этап был реализован с помощью таких сервисов как Checklly и Versel.
 
 Тестирование CD выполенены на @playwright/test на сервисе Checkly. 
   Github отправляет ифнормацию, на хостинг Versel, далее Versel обращается к Checkly, где записаны наши тесты, которые проверяют фронтенд составляющею: Отрисовку страницы и работоспособность кнопок. Затем Checkly датет ответ если тысты пройдены, и далее мы получаем финальный результат.
-  
-#####Versel
+
+
+
+##### Versel
 
 ![image](https://user-images.githubusercontent.com/60611845/212499177-a42bcfb9-0f5b-499a-8b5e-db32c9fba27f.png)
 
 ![image](https://user-images.githubusercontent.com/60611845/212499172-abd3429c-ce68-4e7d-a78c-3deb92ec9c06.png)
 
 
-#####Checkly
+
+
+
+##### Checkly
 
 ![image](https://user-images.githubusercontent.com/60611845/212498990-d66cdee2-18c2-4e42-abda-21e7e3d7649a.png)
 
 ![image](https://user-images.githubusercontent.com/60611845/212498975-f0051d18-4c03-4c65-b673-5dc2e5167d6c.png)
+
+
+
+
 
 ##### @playwright/test
 
@@ -199,9 +210,35 @@ test.describe('Device site tests', () => {
 
 
 
+##### Результаты прохождения тестов:
+
+![img](https://sun9-east.userapi.com/sun9-58/s/v1/ig2/hcfvRn7XWxetLIeOMfLWG8AdNPypO0Bs59UyFCRecoRsa2dEE3EnZflw8aQ6TC78mp-NHU6Z8m8eXHbkZt9Xv_SO.jpg?size=672x1080&quality=96&type=album)
+
+
+
+![img](https://vk.com/doc206886778_656367527?hash=Xz4VQrkxpC4ZlLD76I4kLfOL20nywpiHOIg1Ns13Tus&dl=y9m0CQ8EksV6ZVkHRRfRdSnmuGB6o5A17zxjSgz2MwD&wnd=1&module=im)
+
+
+
+![img](https://vk.com/doc206886778_656367560?hash=i71cXfVbEsoDwx4LWiWenFevajP4DnvFHvjuW84WvFw&dl=6wZKbwgkvTWfvwz1EbUnBmdxFPx2RAxzPXYecxFtiBE&wnd=1&module=im)
+
+
+
+![img](https://vk.com/doc206886778_656367619?hash=PYAoXPO1hNZzUh2UTHKZHwggdYFyE7j4qb6NVC5sX1s&dl=ZpKG8gHDxznASSGrfZNkeTcXuW7nXg5pZZyG6M5h1VL&wnd=1&module=im)
+
+
+
+![img](https://vk.com/doc206886778_656367655?hash=0PMVQzVS4q4FXJ4C2xKqlOPSfdzz0mTuocU8Z3SmMug&dl=r1rznO7YuZl5ynO26tGn64ZQ1liBVaLEXz8aV0SBFuX&wnd=1&module=im)
+
+
+
+## Результат реализации и сборки веб приложения в Telegram:
+
+![img](https://sun9-north.userapi.com/sun9-85/s/v1/ig2/Gn7KJCvomQdSVJ1eqc3o1M8b634KTKCv5PsRnQfzXGnkoTMcuEalk2XVv0Yn_slkF-6QsFy6ZgC8uCgL9XtOyuFe.jpg?size=709x631&quality=96&type=album)
 
 
 
 
 
+![img](https://sun9-west.userapi.com/sun9-65/s/v1/ig2/8-sgXsFa3L-heC2kT_ffIdfFu7dyMKqGU6o0UVBoCrhQpQNCEYNUOqWmSvECG1k1qDgOCC7Iv_Um5ehClNy31NuI.jpg?size=700x616&quality=96&type=album)
 

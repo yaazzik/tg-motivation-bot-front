@@ -30,7 +30,7 @@ jobs:
       - name: Install modules
         run: npm install
 
-      - name: Script test
+      - name: test
         run: ./mocha.sh
 
       

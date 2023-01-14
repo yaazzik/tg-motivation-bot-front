@@ -3,6 +3,6 @@ import { phrases } from './phrases.js'
 
 test('Phrases должен иметь тип string', () => {
     phrases.map((phrase) => {
-        expect(phrase).toBeInstanceOf(String)
+        expect(typeof(phrase)).toBe(typeof(''))
     })
 })

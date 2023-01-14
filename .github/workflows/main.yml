@@ -32,6 +32,6 @@ jobs:
         run: echo Hello, world!
 
       - name: Script test
-        run: yarn playwright scriptTests
+        run: npx playwright test
 
       

@@ -1,4 +1,4 @@
-# Процесс реализации и сборки веб приложения в рамках дисциплины "Программирование" с использованием методологии DevOps (CI/CD). Telegram motivation bot.
+# Процесс реализации и сборки веб приложения в рамках дисциплины "Программирование" с использованием методологии DevOps (CI/CD). [Telegram motivation bot](https://tg-motivation-bot-front.vercel.app/).
 
 ## CI (Continuous Integration)
 
